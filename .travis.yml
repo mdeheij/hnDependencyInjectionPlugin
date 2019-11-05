@@ -3,6 +3,7 @@ language: php
 env:
   global:
     - COMPOSER_MEMORY_LIMIT=4G
+    - SYMFONY_REQUIRE=>=3.4
 
 php:
   - 7.2
@@ -11,6 +12,7 @@ php:
   - 5.6
 
 install:
+  - composer global require rubenrua/symfony-clean-tags-composer-plugin
   - composer install
 
 script: vendor/bin/phpunit
